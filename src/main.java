@@ -2,13 +2,12 @@ import java.util.Objects;
 
 class Main {
     public static void main(String[] args) {
-        Solution test;
         String className = "";
         Object tests;
         boolean single = false;
 
         // Check for any command-line arguments
-        // 1st - Problem # to run
+        // 1st - Day # to run
         // 2nd + - arguments for that problem's class
         // This logic will set the problem to run as well as remove it from the args
         if (args.length > 0) {
