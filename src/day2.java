@@ -20,24 +20,30 @@ public class day2 implements Solution {
                 "7\t5\t3\n" +
                 "2\t4\t6\t8";
 
+        String testInput2 = "5\t9\t2\t8\n" +
+                "9\t4\t7\t3\n" +
+                "3\t8\t6\t5";
 
-        String[] indivdualLines = input.split(System.lineSeparator());
+
+        String[] individualLines = input.split(System.lineSeparator());
         int sumOfDiff = 0;
-        for (String line: indivdualLines)
+        for (String line: individualLines)
         {
             String[] individualItems = line.split("\\t");
-            int smallestInt = Integer.parseInt(individualItems[0]);
-            int largestInt = Integer.parseInt(individualItems[0]);
-            for (String item: individualItems){
-                if(Integer.parseInt(item) < smallestInt) {
-                    smallestInt = Integer.parseInt(item);
-                }
 
-                if(Integer.parseInt(item) > largestInt) {
-                    largestInt = Integer.parseInt(item);
+            for (String item: individualItems){
+                for (String item2: individualItems) {
+                    int parsedItem = Integer.parseInt(item);
+                    int parsedItem2 = Integer.parseInt(item2);
+                    if(parsedItem % parsedItem2 == 0) {
+                        if(parsedItem != parsedItem2) {
+                            sumOfDiff += (parsedItem / parsedItem2);
+                            continue;
+                        }
+                    }
                 }
             }
-            sumOfDiff += (largestInt - smallestInt);
+
         }
         System.out.println(sumOfDiff);
     }
