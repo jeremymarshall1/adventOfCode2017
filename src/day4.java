@@ -19,7 +19,7 @@ public class day4 implements Solution {
 
         try {
             inStream = new BufferedReader(new FileReader(fileName));
-            String line = "abcde xyz ecdab";/*inStream.readLine();*/
+            String line = inStream.readLine();
             while (line != null) {
                 String[] sentence = line.split(" ");
                 int dupe = 0;

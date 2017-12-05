@@ -11,6 +11,6 @@ public class day3 implements Solution {
         }
 
         System.out.println(startNum - lastSquare);
-        System.out.println(circleNum);
+        //System.out.println(circleNum);
     }
 }
