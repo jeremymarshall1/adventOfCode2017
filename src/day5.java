@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 class day5 implements Solution{
     @Override
@@ -24,8 +23,12 @@ class day5 implements Solution{
         int currentIndex = 0;
 
         while(currentIndex < instructionArray.size()) {
+            int offset = 1;
+            if(instructionArray.get(currentIndex) >= 3) {
+                offset = -1;
+            }
             int newIndex = currentIndex + instructionArray.get(currentIndex);
-            instructionArray.set(currentIndex, (instructionArray.get(currentIndex)) + 1);
+            instructionArray.set(currentIndex, (instructionArray.get(currentIndex)) + offset);
             currentIndex = newIndex;
             steps++;
         }
