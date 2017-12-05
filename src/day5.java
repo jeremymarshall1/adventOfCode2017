@@ -1,6 +1,36 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 class day5 implements Solution{
     @Override
     public void solve(String[] args) {
-        System.out.println("Nothing here yet");
+        String fileName = "/home/jeremy/adventOfCode2017/src/files/day5.txt";
+        ArrayList<Integer> instructionArray = new ArrayList<Integer>();
+        try {
+            BufferedReader inStream = new BufferedReader(new FileReader(fileName));
+            String line = inStream.readLine();
+            while(line != null) {
+                instructionArray.add(Integer.parseInt(line));
+                line = inStream.readLine();
+            }
+        } catch (IOException err) {
+            System.out.println(err);
+        }
+
+        int steps = 0;
+        int currentIndex = 0;
+
+        while(currentIndex < instructionArray.size()) {
+            int newIndex = currentIndex + instructionArray.get(currentIndex);
+            instructionArray.set(currentIndex, (instructionArray.get(currentIndex)) + 1);
+            currentIndex = newIndex;
+            steps++;
+        }
+
+        System.out.println(steps);
+
     }
 }
