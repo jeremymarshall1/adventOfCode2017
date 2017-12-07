@@ -12,12 +12,15 @@ class day6 implements Solution {
         int maxIndex = 0;
         int cycles = 0;
         ArrayList<String> oldListings = new ArrayList<>();
+        ArrayList<Integer> cycleOfListings = new ArrayList<>();
 
         for (int x = 0; x < inputArray.length; x++) {
             memBank[x] = Integer.parseInt(inputArray[x]);
         }
+
         while (!duplicateFound(oldListings, Arrays.toString(memBank))) {
             oldListings.add(Arrays.toString(memBank));
+            cycleOfListings.add(cycles);
             maxIndex = findMax(memBank);
             maxValue = memBank[maxIndex];
 
@@ -33,8 +36,10 @@ class day6 implements Solution {
 
             cycles++;
         }
+        int diffIndex = 0;
 
-        System.out.println(cycles);
+        diffIndex =  cycles - (oldListings.indexOf(Arrays.toString(memBank)));
+        System.out.println(cycles + ", " + diffIndex);
 
     }
 
