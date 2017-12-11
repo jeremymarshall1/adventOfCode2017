@@ -53,10 +53,18 @@ class day8 implements Solution {
                         tempvalue = registers.get(splitLine[0]) - Integer.parseInt(splitLine[2]);
                     }
                     registers.put(splitLine[0], tempvalue);
+
+                    if(registers.get(splitLine[0]) > value) {
+                        value = registers.get(splitLine[0]);
+                    }
                 }
 
                 line = instream.readLine();
             }
+
+            System.out.println("The highest value is: " + value);
+
+            value = 0;
 
             for (Map.Entry<String, Integer> item: registers.entrySet()){
                 if(item.getValue() > value) {
@@ -65,7 +73,7 @@ class day8 implements Solution {
                 }
             }
 
-            System.out.println(value);
+            System.out.println("The current highest value is: " + value);
 
         } catch (IOException err) {
             System.out.println(err);
