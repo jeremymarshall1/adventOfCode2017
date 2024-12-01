@@ -14,9 +14,7 @@ class Main {
             System.out.println("Running Day " + args[0] + ": ");
             className = "day" + args[0];
             String[] argsTemp = new String[args.length - 1];
-            for (int x  = 0; x < argsTemp.length; x++) {
-                argsTemp[x] = args[x+1];
-            }
+            System.arraycopy(args, 1, argsTemp, 0, argsTemp.length);
             args = argsTemp;
             single = true;
         }
@@ -28,9 +26,11 @@ class Main {
                     className = "day" + x;
                 }
 
-                tests = Class.forName(className).newInstance();
+                tests = Class.forName(className).getDeclaredConstructor().newInstance();
                 System.out.print(tests.getClass().getName() + ": ");
                 tests.getClass().getMethod("solve",String[].class).invoke(tests, new Object[]{args});
+
+
 
                 // If a command-line argument was passed in, only do the specified problem
                 if (single) {

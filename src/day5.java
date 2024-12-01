@@ -6,7 +6,7 @@ import java.util.ArrayList;
 class day5 implements Solution{
     @Override
     public void solve(String[] args) {
-        String fileName = "/home/jeremy/adventOfCode2017/src/files/day5.txt";
+        String fileName = "./adventOfCode2017/src/files/day5.txt";
         ArrayList<Integer> instructionArray = new ArrayList<Integer>();
         try {
             BufferedReader inStream = new BufferedReader(new FileReader(fileName));

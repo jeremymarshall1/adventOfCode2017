@@ -8,7 +8,7 @@ class day8 implements Solution {
     @Override
     public void solve(String[] args) {
         BufferedReader instream;
-        String fileName = "/home/jeremy/adventOfCode2017/src/files/day8.txt";
+        String fileName = "./adventOfCode2017/src/files/day8.txt";
         String line = null;
         String [] splitLine;
         Boolean increase = false;

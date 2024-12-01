@@ -13,7 +13,7 @@ public class day4 implements Solution {
         Pattern dupePattern = Pattern.compile(dupeRegexPattern);
 
         BufferedReader inStream;
-        String fileName = "/home/jeremy/adventOfCode2017/src/files/day4.txt";
+        String fileName = "./adventOfCode2017/src/files/day4.txt";
 
         int numValidLines = 0;
 

@@ -6,7 +6,7 @@ class day9 implements Solution {
     @Override
     public void solve(String[] args) {
         BufferedReader inStream = null;
-        String fileName = "/home/jeremy/adventOfCode2017/src/files/day9.txt";
+        String fileName = "./adventOfCode2017/src/files/day9.txt";
         String line;
 
         char c;
